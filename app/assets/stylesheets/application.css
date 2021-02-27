@@ -1,16 +1,75 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 @charset "utf-8";
+
+header {
+  height: 50px;
+  background: #2BCDD3;
+  color: #778899;
+}
+
+.navlogo {
+  font-size: 20px;
+  float: left;
+  height: 50px;
+  padding: 10px 0 10px 5%;
+  text-decoration: none;
+  color: #778899;
+}
+
+.navlogo:hover {
+  text-decoration: none;
+  color: #272e2e;
+}
+
+.navpull {
+  margin-top: 7px;
+  padding: 6px;
+  color: #272e2e;
+  font-size: 17px;
+  background: #2BCDD3;
+}
+
+.dropdown-menu {
+  margin-top: 15px;
+}
+
+.navfont {
+  font-size: 12px;
+  margin: 10px 2% 0 0;
+}
+
+.signup {
+  border: 2px solid #fff;
+}
+
+.signup:hover {
+  background: #fff;
+}
+
+.welcomebody {
+  background: #2BCDD3;
+}
+
+/* レッツゴー */
+.welcome {
+  padding: 50px 10% 200px 10%;
+  color: #778899;
+  background-color: #ffffff;
+  background-image: linear-gradient(0deg, #ffffff 2%, #69f1f7 18%, #2bcdd3 50%);
+}
+
+.welcometitle {
+  font-weight: 700;
+}
+
+.welcomebtn {
+  color:#000000;
+  border-bottom: 2px solid #000000;
+  margin: 20px 30px 0 0;
+  border-radius: 0;
+
+}
+
+.welcomebtn:hover {
+  color: #000000;
+  background:#D8BFD8;
+}
