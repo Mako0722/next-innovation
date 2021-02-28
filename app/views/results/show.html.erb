@@ -15,16 +15,27 @@
           <div class="padding-left">
             <%= @result.subtitle %>
             <h3 class="title"><%= @result.title %></h3>
-            <div>URL <%= @result.url %></div>
             by <%= link_to @result.user.name, user_path(@result.user) %>
           </div>
         </div>
 
+        <div class="margin-top20 margin-bottom20">
+          <a href="<%= @result.url %>" target="_blank" class="btn btn-info btn-block">
+            <i class="fas fa-external-link-alt"></i> 作品を見る
+          </a>
+          <div>URL：<%= @result.url %></div>
+        </div>
 
-        <a href="<%= @result.url %>" target="_blank" class="btn btn-info btn-block margin-top20">作品を見る</a>
-        <div id="good_btn_<%= @result.id %>">
-          <%= render 'goods/good_btn', result: @result %>
-        </div>    
+        <div>
+          <span id="good_btn_<%= @result.id %>">
+            <%= render 'goods/good_btn', result: @result %>
+          </span>
+
+          <span class="comment">
+            <span class="margin-right10"><i class="far fa-comment fa-lg"></i></span> <%= @comments.count %>
+          </span>    
+        </div>
+
         
         <div class="margin-top20">
           <%= simple_format(@result.detail) %>
@@ -36,6 +47,27 @@
           </div>
         <% end %>
       </div>
+    </div>
+  </div>
+  <%# コメント欄 %>
+  <div class="panel">
+    <div class="panel-body">
+        <div id="comment">
+          <%= render 'comments/comments', comments: @comments, result: @result %>
+        </div>
+      <%= form_for(@comment, remote: true) do |f| %>
+        <div class="form-group">
+          <%= f.label :comment do %>
+            <i class="far fa-comment"></i> コメントを投稿する (最大225文字)
+          <% end %>
+            <div id="error"></div>
+            <%= f.text_area :comment, id: 'comment_field', placeholder: 'コメントを入力してください', class: 'form-control', rows: 5, required: true %>
+        </div>
+
+        <%= hidden_field_tag :result_id, @result.id %>
+
+        <%= f.submit '投稿', class: 'btn btn-info pull-right' %>
+      <% end %>
     </div>
   </div>
 
