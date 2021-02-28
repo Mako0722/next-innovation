@@ -49,7 +49,7 @@
 
 
 body {
-  background: #f7f7f7;
+  word-wrap: break-word;
 }
 
 
@@ -158,13 +158,35 @@ header {
 .nomalbtn {
   color: #2bcdd3;
   border: 2px solid #2bcdd3;
+  background: #fff;
   padding: 6px 30px;
 }
 
-.nomalbtn:hover {
+.nomalbtn:hover,
+.nomalbtn.now {
   color: #fff;
   background: #2bcdd3;
 }
+
+.goodbtn {
+  color: #f79b24;
+  border: 2px solid #f79b24;
+  padding: 6px 30px;
+}
+
+.goodbtn:hover,
+.goodbtn.now {
+  color: #fff;
+  background: #f79b24;
+}
+
+.badge {
+  background: #0000005e;
+}
+
+
+
+
 
 /* メニューリスト */
 .nav-pills > li > a {
@@ -195,9 +217,7 @@ header {
   margin: 0;
 }
 
-.result {
-  padding: 20px 30px;
-}
+
 
 .border-left {
   border-left: 4px solid #2bcdd3;
@@ -240,17 +260,72 @@ header {
 }
 
 .img {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   border: 1px solid #f1f1f1;
   box-shadow: 5px 5px 10px -5px #c0c0c0;
 }
 
 .mo_img {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
 }
 
+.no_img_content {
+  line-height: 200px;
+}
+
+
 .top-content {
   padding: 20px
+}
+
+.icon {
+  padding: 20px 19px;
+  border-radius: 50%;
+  margin-right: 10px;
+  color: #fff;
+  width: 60px;
+}
+
+.home-content {
+  padding: 10px 0 10px 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.b-bottom {
+  border-bottom: 3px solid #2bcdd3;
+}
+
+.good-b-bottom {
+  border-bottom: 3px solid #f79b24;
+}
+
+.users-b-bottom {
+  border-bottom: 3px solid #52b311;
+}
+
+.result .col-sm-4 {
+  padding: 0 5px;
+}
+
+.result .panel-heading {
+  height: 200px;
+}
+
+.result .panel-heading .img {
+  height: 100%;
+  max-width: 100%;
+}
+
+.result .panel-body {
+  height: 100px;
+  width: 100%;
+}
+
+.result .panel-body div {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; 
 }
