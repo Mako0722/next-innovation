@@ -9,6 +9,8 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  skill                  :string           default("")
+#  yourself               :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -24,6 +26,8 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable
 
           validates :name, presence: true, length: { maximum: 20 }
-          
+          validates :yourself, length: { maximum: 150 }
+          validates :skill, length: {maximum: 150 }
+
   has_many :results, dependent: :destroy
 end
