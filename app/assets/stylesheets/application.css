@@ -1,8 +1,36 @@
 @charset "utf-8";
+/* ログイン、ログアウト */
+
+
+/* アカウント登録の色文字変更 */
+.margin-top10 {
+  margin-top: 10px;
+}
+
+.margin-top30 {
+  margin-top: 30px;
+}
+
+.color {
+  color: #2BCDD3;
+}
+
+.background {
+  background: #2BCDD3;
+}
+
+.white {
+  color: #fff;
+}
+
+
+
+/* ヘッダー、トップ */
+
 
 header {
   height: 50px;
-  background: #2BCDD3;
+  background: red;
   color: #778899;
 }
 
@@ -59,7 +87,14 @@ header {
 
 .welcometitle {
   font-weight: 700;
+  margin-bottom: 0;
 }
+
+.welcomecontent {
+  margin-top: 25px;
+}
+
+
 
 .welcomebtn {
   color:#000000;
