@@ -5,6 +5,7 @@
 #  id         :bigint           not null, primary key
 #  detail     :text
 #  github     :text
+#  image      :string
 #  subtitle   :string
 #  title      :string
 #  url        :text
@@ -33,4 +34,6 @@ class Result < ApplicationRecord
   has_many :good_users, through: :goods, source: :user
 
   has_many :comments, dependent: :destroy
+
+  mount_uploader :image, ImagesUploader
 end
