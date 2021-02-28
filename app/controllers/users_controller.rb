@@ -5,5 +5,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @results = @user.results.order('created_at DESC')
+    counts(@user)
   end
 end
