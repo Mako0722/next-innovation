@@ -16,17 +16,28 @@
   margin-top: 30px;
 }
 
+.margin-bottom10 {
+  margin-bottom: 10px;
+}
+
+
 .color {
   color: #2BCDD3;
 }
 
 .background {
-  background: #2BCDD3;
+  background: #FF69A3;
 }
 
 .white {
   color: #fff;
 }
+
+.green {
+  color: #52b311;
+}
+
+
 
 body {
   background: #f7f7f7;
@@ -62,7 +73,7 @@ header {
   padding-left: 6px;
   color: #272e2e;
   font-size: 23px;
-  background: #2BCDD3;
+  background: #FF69A3;
 }
 
 .navicon {
@@ -87,7 +98,7 @@ header {
 
 .signin-navfont {
   font-size: 13px;
-  background: #11b5bb;
+  background: #FF69A3;
 }
 
 
@@ -152,7 +163,7 @@ header {
 }
 
 .nav-pills > li.active > a {
-  background: #2bcdd3;
+  background: #111111;
 }
 
 .nav-pills > li.active > a:hover {
