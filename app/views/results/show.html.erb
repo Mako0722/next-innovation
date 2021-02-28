@@ -38,6 +38,23 @@
       </div>
     </div>
   </div>
+  <%# コメント欄 %>
+  <div class="panel">
+    <div class="panel-body">
+      <%= form_for(@comment) do |f| %>
+        <div class="form-group">
+          <%= f.label :comment do %>
+            <i class="far fa-comment"></i> コメントを投稿する
+          <% end %>
+          <%= f.text_area :comment, placeholder: 'コメントを入力してください', class: 'form-control', rows: 5, required: true %>
+        </div>
+
+        <%= f.hidden_field :result_id, value: @result.id %>
+
+        <%= f.submit '投稿', class: 'btn btn-info pull-right' %>
+      <% end %>
+    </div>
+  </div>
 
   <div class="col-sm-3 col-sm-pull-9">
     <div class="panel">
