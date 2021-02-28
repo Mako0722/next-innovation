@@ -20,6 +20,10 @@
   margin-bottom: 10px;
 }
 
+.margin-right10 {
+  margin-right: 10px;
+}
+
 
 .color {
   color: #2BCDD3;
@@ -196,4 +200,20 @@ header {
 
 .padding-left {
   padding-left: 10px;
+}
+
+/* いいね機能 */
+.good {
+  color: #f79b24;
+  border: 2px solid #f79b24;
+  padding: 6px 20%;
+}
+
+.good:hover,
+.goodnow,
+.goodnow:hover {
+  color: #f79b24;
+  background: #f7ad2438;
+  border: 2px solid #f79b24;
+  padding: 6px 20%;
 }
