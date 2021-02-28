@@ -21,8 +21,12 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Result < ApplicationRecord
-  validates :title, presence: true, length: { maximum: 20 }
+
+  validates :subtitle, length: { maximum: 70 }, presence: true
+  validates :title, length: { maximum: 20 }, presence: true
   validates :detail, length: { maximum: 65535 }
-  validates :url, length: { maximum: 65535 }
+
+
+  validates :url, length: { maximum: 65535 }, presence: true
   validates :github, length: { maximum: 65535 }
 end
