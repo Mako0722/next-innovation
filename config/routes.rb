@@ -3,6 +3,17 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'toppage#index'
 
-  resources :users, only: [:index, :show]
-  resources :results
+  resources :users, only: [:index, :show] do 
+    member do
+      get :goods
+    end
+  end
+
+
+  resources :results do 
+    resource :goods, only: [:create, :destroy]
+  end
+
+  get '/goods', to: 'goods#index'
+
 end
