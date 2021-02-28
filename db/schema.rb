@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_085716) do
+ActiveRecord::Schema.define(version: 2021_02_28_092711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "goods", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "result_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["result_id"], name: "index_goods_on_result_id"
+    t.index ["user_id", "result_id"], name: "index_goods_on_user_id_and_result_id", unique: true
+    t.index ["user_id"], name: "index_goods_on_user_id"
+  end
 
   create_table "results", force: :cascade do |t|
     t.string "subtitle"
@@ -42,5 +52,7 @@ ActiveRecord::Schema.define(version: 2021_02_28_085716) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "goods", "results"
+  add_foreign_key "goods", "users"
   add_foreign_key "results", "users"
 end
