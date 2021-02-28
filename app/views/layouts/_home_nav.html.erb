@@ -11,5 +11,12 @@
         <i class="fas fa-user"></i> マイページ
       <% end %>
     </li>
+    <li role="presentation"><a href="/users/edit" ><i class="fas fa-cog"></i> ユーザー情報</a></li>
+
+    <div class="partition margin-top10 margin-bottom10"></div>
+
+    <li>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %>
+    </li>
   </ul>
 </div>
