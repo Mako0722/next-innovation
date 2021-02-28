@@ -5,6 +5,7 @@
 #  id         :bigint           not null, primary key
 #  detail     :text
 #  github     :text
+#  image      :string
 #  subtitle   :string
 #  title      :string
 #  url        :text
