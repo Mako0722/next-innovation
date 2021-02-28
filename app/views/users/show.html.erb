@@ -1,2 +1,31 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row margin-top20">
+
+  <div class="col-sm-3">
+    <div class="panel">
+      <div class="panel-heading partition text-center">
+        <span><%= @user.name %></span>
+      </div>
+      <div class="panel-body">
+        プロフィール
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <span class="btn btn-info">
+      作品  <span class="badge"><%= @count_results %></span>
+    </span>
+    <span class="btn btn-default">
+      いいねした作品 
+    </span>
+    <div class="panel margin-top10">
+      <div class="panel-body eachbody">
+        <% if @results == [] %>
+          <div class="text-muted eachcontent">
+            登録している作品はありません
+          </div>
+        <% end %>
+        <%= render 'results/results', results: @results %>
+      </div>
+    </div>
+  </div>
+</div>
