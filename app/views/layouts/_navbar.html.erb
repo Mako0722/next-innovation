@@ -8,9 +8,9 @@
           <i class="far fa-caret-square-down"></i>
         </button>
         <ul class="dropdown-menu" role="menu">
-          <li><a href='/'><i class="fas fa-share-alt"></i> 最新の作品</a></li>
+        <li role="presentation" class="<%= 'active' if current_page?(good_ranking_path) %>"><a href="/good_ranking"><i class="fas fa-crown"></i> いいねランキング</a></li>
           <li class="divider"></li>
-          <li><a href='/good_ranking'><i class="fas fa-star"></i> 注目の作品</a></li>
+          <li><a href='/good_ranking'><i class="fas fa-crown"></i> いいねランキング</a></li>
           <li class="divider"></li>
           <li><a href='/users'><i class="fas fa-users"></i> ユーザー</a></li>
           <li class="divider"></li>
