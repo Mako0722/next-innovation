@@ -13,7 +13,7 @@
           <li class="divider"></li>
           <li><a href='/users'><i class="fas fa-users"></i> ユーザー</a></li>
           <li class="divider"></li>
-          <%# <li><a href='/about_sharemade'>Next innovationについて</a></li> %>
+          <%# <li><a href='/about_Next innovation'>Next innovationについて</a></li> %>
         </ul>
       </span>
 
@@ -30,7 +30,17 @@
             <% end %>
           </li>
           <li class="divider"></li>
-          <li><a href="/users/edit"><i class="fas fa-cog"></i> ユーザー情報</a></li>
+          <% if current_user.profiles != [] %>
+            <li>
+              <%= link_to edit_profile_path(current_user) do %>
+                <i class="fas fa-user-edit"></i>プロフィール
+              <% end %>
+            </li>
+          <% else %>
+            <li><a href="/profiles/new"><i class="fas fa-user-edit"></i>プロフィール</a></li>
+          <% end %>
+          <li><a href="/users/edit"><i class="fas fa-cog"></i> アカウント設定</a></li>
+
           <li class="divider"></li>
           <li>
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %>

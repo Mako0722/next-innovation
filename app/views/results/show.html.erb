@@ -20,22 +20,17 @@
         </div>
 
         <div class="row">
-          <div class="text-center image-box margin-bottom10">
-            <% if @result.image.url != nil %>
-              <%= image_tag @result.image.url, class: 'img' %>
-            <% else %>
-              <img src="/images/no_img.png" alt="no_image" class="no_img">
-              NO IMAGE
-            <% end %>
+          <div class="text-center image-box margin-bottom10 no_img_content_show">
+            <img src="/images/no_img.png" alt="no_image" class="no_img">
+            Under Construction
           </div>
         </div>
-      
+    
         <div class="margin-bottom20">
           <a href="<%= @result.url %>" target="_blank" class="btn btn-info btn-block">
             <i class="fas fa-external-link-alt"></i> 作品を見る
           </a>
           <div class="margin-bottom10">（ URL：<%= @result.url %> ）</div>
-
 
           <div class="text-center">
             <span id="good_btn_<%= @result.id %>">
@@ -43,11 +38,11 @@
             </span>
           </div>
         </div>
-        
+
         <div class="margin-top20">
           <%= simple_format(@result.detail) %>
         </div>
-
+        
         <% if @result.github != "" %>
           <div class="margin-top10">
             <i class="fab fa-github fa-lg"></i> <a href="<%= @result.github %>" target="_blank"><%= @result.github %></a>
@@ -58,9 +53,10 @@
 
         <div class="text-center">
           <p><b>Twitterでこの作品を共有しよう！</b></p>
+          <a class="btn tweetbtn" target="_blank" href="https://twitter.com/intent/tweet?text=<%= @result.subtitle %>〜<%= @result.title %>〜%0a&url=<%= request.url %>&hashtags=Sharemade"><i class="fab fa-twitter"></i> Twitterで共有</a>
           <a class="btn tweetbtn" target="_blank" href="https://twitter.com/intent/tweet?text=<%= @result.subtitle %>〜<%= @result.title %>〜%0a&url=<%= request.url %>&hashtags=Next innovation"><i class="fab fa-twitter"></i> Twitterで共有</a>
         </div>
-
+        
         <% if user_signed_in? == false %>
         <% elsif current_user.admin? %>
           <%= link_to '不正な作品', result_path(@result), 
@@ -70,19 +66,21 @@
         <% end %>
       </div>
     </div>
+
     <%# コメント欄 %>
     <div class="panel panel-default">
       <div class="panel-body">
         <div id="comment">
           <%= render 'comments/comments', comments: @comments, result: @result %>
         </div>
-        <div class="partition margin-top20 margin-bottom20"></div>
 
+        <div class="partition margin-top20 margin-bottom20"></div>
 
         <% if user_signed_in? %>
           <%= form_for(@comment, remote: true) do |f| %>
             <div class="form-group">
               <%= f.label :comment, 'コメントを投稿する (最大225文字)' %>
+                
               <div id="error"></div>
               
               <%= f.text_area :comment, id: 'comment_field', placeholder: 'コメントを入力してください', class: 'form-control', rows: 5, required: true %>
@@ -99,21 +97,19 @@
         <% end %>
       </div>
     </div>
-
   </div>
-<div class="col-sm-3 col-sm-pull-9">
-  <div class="panel panel-default">
-    <div class="panel-heading text-center">
-      制作者
+
+  <div class="col-sm-3 col-sm-pull-9">
+    <div class="panel panel-default">
+      <div class="panel-heading text-center">
+        制作者
+      </div>
+      <div class="panel-body">
+        <b><i class="fas fa-user"></i> <%= link_to @result.user.name, user_path(@result.user) %></b>
+        <%= render 'profiles/profile', profile: @profile %>
+      </div>
     </div>
-    <div class="panel-body">
-      <b><i class="fas fa-user"></i> <%= link_to @result.user.name, user_path(@result.user) %></b>
-      <p><%= @result.user.yourself %></p>
-      <% unless @result.user.skill == "" %>
-        <b>▷言語・スキル</b>
-        <p><%= @result.user.skill %></p>
-      <% end %>
-    </div>
+
     <% unless user_signed_in? %>
       <div class="text-center comment-signin">
         <div><b>自分の作ったアプリやサイトを<br>登録しませんか？</b></div>
@@ -123,4 +119,5 @@
       </div>
     <% end %>
   </div>
+
 </div>
