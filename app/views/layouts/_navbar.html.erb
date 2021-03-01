@@ -2,7 +2,6 @@
     <div class="container">
       <a href="/" class='navlogo'>Next innovation</a>
 
-    <% if user_signed_in? %>
       <span class="dropdown">
         <button class="btn navpull dropdown-toggle" type="button" data-toggle="dropdown">
           <i class="far fa-caret-square-down"></i>
@@ -17,6 +16,8 @@
           <%# <li><a href='/about_sharemade'>Next innovationについて</a></li> %>
         </ul>
       </span>
+
+    <% if user_signed_in? %>
 
       <span class="dropdown pull-right navicon">
         <button class=" btn dropdown-toggle background" type="button" data-toggle="dropdown">
@@ -39,9 +40,8 @@
 
 
       <%= link_to new_result_path, class:'white' do %>
-        <span class="btn pull-right signin-navfont margin-top10">
+        <span class="btn pull-right result-new margin-top10">
           <i class="fas fa-edit"></i> 作品登録
-
         </span>
       <% end %>
 
