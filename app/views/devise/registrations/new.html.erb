@@ -11,17 +11,7 @@
           <%= f.label :name, 'ユーザー名' %>
           <%= f.text_field :name, class: 'form-control'%>
         </div>
-
-        <div class="form-group">
-          <%= f.label :yourself, '自己紹介（最大150文字）' %>
-          <%= f.text_area :yourself, class: 'form-control', rows: 6, placeholder: '改行は反映されません' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :skill, '言語・スキル' %>
-          <%= f.text_field :skill, class: 'form-control', placeholder: 'html / css / JavaScript / Illustrator'%>
-        </div>
-      </div>
-          <div class="panel-heading text-center background white">
+      <div class="panel-heading text-center background white">
         アカウント設定
       </div>
       <div class="panel-body">
@@ -41,7 +31,6 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
         </div>
       </div>
-      <div class="text-center">
         <%= f.submit '保存する', class: 'btn btn-info'%>
       </div>
     <% end %>
