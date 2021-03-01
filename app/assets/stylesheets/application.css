@@ -52,6 +52,13 @@ body {
   word-wrap: break-word;
 }
 
+.alert {
+  margin: 0;
+}
+
+footer {
+  height: 50px;
+}
 
 
 /* ヘッダー、トップ */
