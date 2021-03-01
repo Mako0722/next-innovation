@@ -47,11 +47,20 @@
         <div class="margin-top20">
           <%= simple_format(@result.detail) %>
         </div>
+
         <% if @result.github != "" %>
           <div class="margin-top10">
             <i class="fab fa-github fa-lg"></i> <a href="<%= @result.github %>" target="_blank"><%= @result.github %></a>
           </div>
         <% end %>
+
+        <div class="partition margin-top20 margin-bottom10"></div>
+
+        <div class="text-center">
+          <p><b>Twitterでこの作品を共有しよう！</b></p>
+          <a class="btn tweetbtn" target="_blank" href="https://twitter.com/intent/tweet?text=<%= @result.subtitle %>〜<%= @result.title %>〜%0a&url=<%= request.url %>&hashtags=Next innovation"><i class="fab fa-twitter"></i> Twitterで共有</a>
+        </div>
+
         <% if user_signed_in? == false %>
         <% elsif current_user.admin? %>
           <%= link_to '不正な作品', result_path(@result), 
@@ -68,6 +77,8 @@
           <%= render 'comments/comments', comments: @comments, result: @result %>
         </div>
         <div class="partition margin-top20 margin-bottom20"></div>
+
+
         <% if user_signed_in? %>
           <%= form_for(@comment, remote: true) do |f| %>
             <div class="form-group">
