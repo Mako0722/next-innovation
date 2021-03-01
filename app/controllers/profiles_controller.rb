@@ -36,7 +36,7 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:yourself, :skill, :twitter_account, :github_account)
   end
-  
+
   def profile_new_setting
     @profile = Profile.find_by(user_id: current_user.id)
       if @profile
@@ -47,7 +47,7 @@ class ProfilesController < ApplicationController
   def profile_setting
     @profile = Profile.find_by(user_id: current_user.id)
     unless @profile
-      redirect_to 'new'
+      redirect_to new_profile_url
     end
   end
 end
