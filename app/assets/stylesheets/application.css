@@ -61,6 +61,10 @@ footer {
   height: 50px;
 }
 
+.orange {
+  color: #f79b24;
+}
+
 
 /* ヘッダー、トップ */
 
@@ -134,10 +138,12 @@ header {
 
 /* レッツゴー */
 .welcome {
-  padding: 50px 40px 80px 40px;
+  padding: 50px 40px 30px 40px;
   color: #778899;
   background-color: #ffffff;
-  background-image: linear-gradient(0deg, #ffffff 2%, #69f1f7 18%, #2bcdd3 50%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .welcometitle {
@@ -150,7 +156,7 @@ header {
   padding: 4px;
   border-radius: 15px;
   width: 300px;
-  margin: 20px auto auto auto ;
+  margin: 35px auto auto auto ;
 }
 
 
