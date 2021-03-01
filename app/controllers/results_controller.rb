@@ -61,4 +61,8 @@ class ResultsController < ApplicationController
       redirect_to root_url
     end
   end
+  def add_visit_count(result)
+    result.visit += 1
+    result.update(visit: result.visit)
+  end
 end
