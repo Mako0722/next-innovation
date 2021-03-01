@@ -4,12 +4,15 @@ Rails.application.routes.draw do
   root to: 'toppage#index'
 
   get '/about_sharemade', to: 'toppage#about'
+  get '/about_Next innovation', to: 'toppage#about'
 
   resources :users, only: [:index, :show] do 
     member do
       get :goods
     end
   end
+
+  resources :profiles, only: [:new, :create, :edit, :update]
 
 
   resources :results, except: [:index] do
