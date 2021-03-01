@@ -31,11 +31,11 @@
 
 
 .color {
-  color: #2BCDD3;
+  color: #08d1d8;
 }
 
 .background {
-  background: #FF69A3;
+  background: #08d1d8;
 }
 
 .white {
@@ -146,9 +146,9 @@ header {
 .welcomebtn {
   color:#000000;
   border-bottom: 2px solid #000000;
+  border: 1px solid #000000;
   margin: 20px 15px;
-  border-radius: 0;
-
+  background: #35a3a7
 }
 
 .welcomebtn:hover {
