@@ -1,28 +1,23 @@
-<%# ユーザー詳細 %>
 <div class="row margin-top20">
+
   <div class="col-sm-3">
     <div class="panel panel-default">
       <div class="panel-heading partition text-center">
         <span><%= user.name %></span>
       </div>
       <div class="panel-body">
-        <p><%= user.yourself %></p>
-        <% unless user.skill == "" %>
-          <b>▷言語・スキル</b>
-          <p><%= user.skill %></p>
-        <% end %>
-        <div>
-          <% if user.twitter_account != "" %>
-            <a href="https://twitter.com/<%= user.twitter_account %>" target="_blank"><i class="fab fa-twitter-square fa-2x margin-right5"></i></a>
-          <% end %>
-          <% if user.github_account != "" %>
-            <a href="<%= user.github_account %>" target="_blank"><i class="fab fa-github-square fa-2x black"></i></a>
-          <% end %>
-        </div>
-
+        <%= render 'profiles/profile', profile: @profile %>
+      
         <% if user == current_user %>
-          <a href="/users/edit" class="pull-right"><i class="fas fa-user-edit"></i>プロフィール編集</a>
+          <% if @profile %>
+            <%= link_to edit_profile_path(current_user), data: {"turbolinks" => false} do %>
+              <i class="fas fa-user-edit"></i>プロフィール編集
+            <% end %>
+          <% else %>
+            <a href="/profiles/new" class="pull-right"><i class="fas fa-user-edit"></i>プロフィール編集</a>
+          <% end %>
         <% end %>
+
         <% if user_signed_in? == false %>
         <% elsif current_user.admin? %>
           <%= form_for(user, url:user_registration_path(user),
@@ -36,6 +31,7 @@
       </div>
     </div>
   </div>
+
   <div class="col-sm-9">
     <%= link_to user_path(user), style: 'text-decoration: none' do %>
       <span class="btn nomalbtn <%= 'now' if current_page?(user_path(user)) %>">
@@ -55,6 +51,7 @@
           作品はありません
         </div>
       <% end %>
+
       <%= render 'results/results', results: results %>
     </div>
   </div>

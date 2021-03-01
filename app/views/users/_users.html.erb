@@ -1,16 +1,13 @@
 <% users.each do |user| %>
   <div class='eachcontent partition'>
     <p><i class="fas fa-user"></i> <%= link_to user.name, user_path(user) %></p>
-    <p><%= user.yourself %></p>
+
     <% unless user.results == [] %>
       登録した作品 <span class='green'><%= user.results.count %></span> /
     <% end %>
     <span class="margin-right5">いいねした作品 <%= user.good_results.count %></span>
-    <% if user.twitter_account != "" %>
-      <a href="https://twitter.com/<%= user.twitter_account %>" target="_blank"><i class="fab fa-twitter-square fa-lg margin-right5"></i></a>
-    <% end %>
-    <% if user.github_account != "" %>
-      <a href="<%= user.github_account %>" target="_blank"><i class="fab fa-github-square fa-lg black"></i></a>
-    <% end %>
+
+    <%# ユーザーのプロフィールを表示、ツイッターとgithubアカウントを表示したい %>
+    <%# eachで取り出しているuserをもとに、Profileテーブルからデータを取り出せるか %>
   </div>
 <% end %>
