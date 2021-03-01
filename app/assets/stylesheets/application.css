@@ -50,6 +50,7 @@
 
 body {
   word-wrap: break-word;
+  background: #75695e1a;
 }
 
 .alert {
@@ -58,6 +59,10 @@ body {
 
 footer {
   height: 50px;
+}
+
+.orange {
+  color: #f79b24;
 }
 
 
@@ -133,10 +138,12 @@ header {
 
 /* レッツゴー */
 .welcome {
-  padding: 50px 40px 80px 40px;
+  padding: 50px 40px 30px 40px;
   color: #778899;
   background-color: #ffffff;
-  background-image: linear-gradient(0deg, #ffffff 2%, #69f1f7 18%, #2bcdd3 50%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .welcometitle {
@@ -145,7 +152,11 @@ header {
 }
 
 .welcomecontent {
-  margin-top: 25px;
+  background: #424242da;
+  padding: 4px;
+  border-radius: 15px;
+  width: 300px;
+  margin: 35px auto auto auto ;
 }
 
 
@@ -153,9 +164,9 @@ header {
 .welcomebtn {
   color:#000000;
   border-bottom: 2px solid #000000;
-  border: 1px solid #000000;
+  border: 2px solid #000000;
   margin: 20px 15px;
-  background: #35a3a7
+  background: #10bac0;
 }
 
 .welcomebtn:hover {
@@ -165,7 +176,7 @@ header {
 .nomalbtn {
   color: #2bcdd3;
   border: 2px solid #2bcdd3;
-  background: #fff;
+  background-color: transparent;
   padding: 6px 30px;
 }
 
@@ -173,6 +184,7 @@ header {
 .nomalbtn.now {
   color: #fff;
   background: #2bcdd3;
+  border-color: #18868a;
 }
 
 .goodbtn {
@@ -289,6 +301,9 @@ header {
 }
 
 
+
+
+
 .top-content {
   padding: 20px
 }
@@ -335,6 +350,13 @@ header {
   height: 100px;
   width: 100%;
 }
+
+
+.new-label {
+  background: #cf1414;
+  color: #fff;
+}
+
 
 .result .panel-body div {
   text-overflow: ellipsis;
