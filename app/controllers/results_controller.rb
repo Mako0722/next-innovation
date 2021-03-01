@@ -2,10 +2,10 @@ class ResultsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
-
   def show
     @result = Result.find(params[:id])
     @comments = Comment.where(result_id: @result.id)
+    @profile = Profile.find_by(user_id: @result.user.id)
     add_visit_count(@result)
     if user_signed_in?
       @comment = current_user.comments.build
@@ -25,7 +25,6 @@ class ResultsController < ApplicationController
       flash.now[:danger] = '作品の登録に失敗しました'
       render 'new'
     end
-
   end
 
   def edit
@@ -40,7 +39,7 @@ class ResultsController < ApplicationController
       render 'edit'
     end
   end
-  
+
   def destroy
     @result.destroy
     flash[:danger] = "作品を削除しました"
@@ -61,6 +60,7 @@ class ResultsController < ApplicationController
       redirect_to root_url
     end
   end
+
   def add_visit_count(result)
     result.visit += 1
     result.update(visit: result.visit)

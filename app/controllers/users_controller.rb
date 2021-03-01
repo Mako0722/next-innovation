@@ -12,4 +12,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @results = @user.good_results
   end
+  
+  private
+
+  def user_detail
+    @user = User.find(params[:id])
+    @profile = Profile.find_by(user_id: @user.id)
+  end
 end
