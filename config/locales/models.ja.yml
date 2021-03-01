@@ -21,8 +21,6 @@ ja:
       comment:
         comment: コメント
       profile:
-        # yourself: 自己紹介
-        # skill: 言語・スキル
         twitter_account: twitter
         github_account: Githubアカウント
       comment:

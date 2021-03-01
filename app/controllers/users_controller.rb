@@ -5,11 +5,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    user_detail
     @results = @user.results.order('created_at DESC')
   end
   def goods
-    @user = User.find(params[:id])
+    user_detail
     @results = @user.good_results
   end
   
