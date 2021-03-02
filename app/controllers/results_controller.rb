@@ -32,17 +32,17 @@ class ResultsController < ApplicationController
 
   def update
     if @result.update(result_params)
-      flash[:success] = "作品情報を編集しました"
+      flash[:success] = '作品情報を編集しました'
       redirect_to result_path(@result)
     else
-      flash.now[:danger] = "作品情報の変更に失敗しました"
+      flash.now[:danger] = '作品情報の変更に失敗しました'
       render 'edit'
     end
   end
 
   def destroy
     @result.destroy
-    flash[:danger] = "作品を削除しました"
+    flash[:danger] = '作品を削除しました'
     redirect_to user_url(@result.user)
   end
 

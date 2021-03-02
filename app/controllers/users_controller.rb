@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     user_detail
     @results = @user.good_results
   end
-  
+
   private
 
   def user_detail

@@ -3,10 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'toppage#index'
 
-  # get '/about_sharemade', to: 'toppage#about'
   get '/about_Next innovation', to: 'toppage#about'
 
-  resources :users, only: [:index, :show] do 
+  resources :users, only: [:index, :show] do
     member do
       get :goods
     end
@@ -14,13 +13,11 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:new, :create, :edit, :update]
 
-
   resources :results, except: [:index] do
     resource :goods, only: [:create, :destroy]
   end
 
   resources :comments, only: [:create, :destroy]
-
 
   get '/good_ranking', to: 'goods#index'
 

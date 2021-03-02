@@ -4,7 +4,6 @@ class NotificationsController < ApplicationController
     current_user_notifications = Notification.where(result_id: current_user.results.select(:id)).order('created_at DESC')
     @check_notifications = current_user_notifications.where(check: true).limit(10)
 
-
     @uncheck_notifications = current_user_notifications.where(check: false)
   end
 
