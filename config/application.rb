@@ -13,9 +13,11 @@ module NextInnovation
 
     config.i18n.default_locale = :ja
 
+    if Rails.env.development? || Rails.env.test?
+      Bundler.require(*Rails.groups)
+      Dotenv::Railtie.load
+    end
 
-    Bundler.require(*Rails.groups)
-    Dotenv::Railtie.load
 
     # Configuration for the application, engines, and railties goes here.
     #
