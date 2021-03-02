@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-sm-9 col-sm-push-3">
+    <div class="home-content b-bottom margin-bottom10 color"><i class="fas fa-bell color"></i> 通知</div>
+      <div class="new-look-bg">
+        <%= render 'notifications/notifications', notifications: @uncheck_notifications %>
+      </div>
+      <%= render 'notifications/notifications', notifications: @check_notifications %>
+    </div>
+
+    <%= render 'layouts/home_nav'%>
+  </div>
+</div>

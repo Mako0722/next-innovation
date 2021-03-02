@@ -8,7 +8,14 @@ class GoodsController < ApplicationController
   def create
     @result = Result.find(params[:result_id])
     current_user.good(@result)
-    # reloadを実行するとデータベースの値を取得しています。 カウント調整
+
+    # 自分がいいねした時は通知しないように変更する
+
+    unless Notification.find_by(user_id: current_user.id, result_id: @result.id, kind: 'good') || @result.user == current_user
+
+      Notification.create(user_id: current_user.id, result_id: @result.id, kind: 'good')
+    end
+
     @result.reload
   end
 
