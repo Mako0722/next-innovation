@@ -1,6 +1,9 @@
-<div class="container margin-top10">
-  <div class='row margin-top20'>
-    <div class="col-sm-6 col-sm-offset-3">
+<%# アカウント設定 %>
+<div class='row margin-top20'>
+  <div class="col-sm-6 col-sm-offset-3">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+
       <div class="panel-heading text-center background white">
         <i class="fas fa-cog"></i> アカウント設定
       </div>
@@ -10,7 +13,7 @@
         <%= f.label :name, 'ユーザー名' %>
         <%= f.text_field :name, class: 'form-control'%>
       </div>
-
+      
         <div class="field form-group">
           <%= f.label :email %><br />
           <%= f.email_field :email, autocomplete: "email", class: 'form-control' %>
@@ -30,13 +33,14 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
         </div>
       </div>
-
+      
       <div class="text-center">
         <%= f.submit '保存する', class: 'btn btn-info'%>
       </div>
+    <% end %>
 
     <div class="partition margin-top30 margin-bottom10"></div>
-
+    
     <div class="text-center">
       <%= form_for(resource, as: resource_name, url:registration_path(resource_name),
                     html: { method: :delete },

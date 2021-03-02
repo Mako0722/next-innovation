@@ -9,10 +9,10 @@ class ProfilesController < ApplicationController
   def create
     @profile = current_user.profiles.build(profile_params)
     if @profile.save
-      flash[:success] = "プロフィールを設定しました"
+      flash[:success] = 'プロフィールを設定しました'
       redirect_to user_url(current_user)
     else
-      flash.now[:danger] = "プロフィールの設定に失敗しました"
+      flash.now[:danger] = 'プロフィールの設定に失敗しました'
       render 'new'
     end
   end
@@ -23,10 +23,10 @@ class ProfilesController < ApplicationController
   def update
     @profile = Profile.find_by(user_id: current_user.id)
     if @profile.update(profile_params)
-      flash[:success] = "プロフィールを設定しました"
+      flash[:success] = 'プロフィールを設定しました'
       redirect_to user_url(current_user)
     else
-      flash.now[:danger] = "プロフィールの設定に失敗しました"
+      flash.now[:danger] = 'プロフィールの設定に失敗しました'
       render 'edit'
     end
   end

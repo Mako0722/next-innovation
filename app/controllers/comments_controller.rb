@@ -13,8 +13,6 @@ class CommentsController < ApplicationController
       Notification.create(user_id: current_user.id, result_id: @result.id, kind: 'comment')
     end
 
-
-
     @comment_save = @comment.save
 
   end

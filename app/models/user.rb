@@ -25,14 +25,13 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable
 
           validates :name, presence: true, length: { maximum: 20 }
-  
+
   has_many :profiles, dependent: :destroy
   has_many :results, dependent: :destroy
   has_many :goods, dependent: :destroy
   has_many :good_results, through: :goods, source: :result
 
   has_many :notifications, dependent: :destroy
-
 
   def good(result)
     self.goods.find_or_create_by(result_id: result.id)
@@ -49,7 +48,6 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
-
   # アップデートをcurrent_passwordなし行うためのメソッド
   def update_without_current_password(params, *options)
     params.delete(:current_password)
@@ -62,5 +60,5 @@ class User < ApplicationRecord
     result = update_attributes(params, *options)
     clean_up_passwords
     result
-  end  
+  end
 end
