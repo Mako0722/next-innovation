@@ -43,6 +43,11 @@
   background: #08d1d8;
 }
 
+.new-look-bg {
+  background: #aeffff3f;
+}
+
+
 .white {
   color: #fff;
 }
@@ -61,6 +66,11 @@ body {
 .alert {
   margin: 0;
 }
+
+.badge {
+  background: #0000005e;
+}
+
 
 footer {
   height: 50px;
@@ -127,6 +137,17 @@ header {
   background: #27a9ad;
 }
 
+.nav-count {
+  margin-top: 13px;
+  margin-left: 3px;
+  padding: 7px 3px;
+  background: hsl(180, 100%, 97%);
+  color: #219191;
+}
+
+.nav-user {
+  padding-left: 6px;
+}
 
 
 .signup {

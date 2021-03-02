@@ -24,4 +24,5 @@ Rails.application.routes.draw do
 
   get '/good_ranking', to: 'goods#index'
 
+  resources :notifications, only: [:index]
 end
