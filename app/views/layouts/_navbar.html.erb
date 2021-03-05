@@ -7,71 +7,66 @@
           <i class="far fa-caret-square-down"></i>
         </button>
         <ul class="dropdown-menu" role="menu">
-        <li role="presentation" class="<%= 'active' if current_page?(good_ranking_path) %>"><a href="/good_ranking"><i class="fas fa-crown"></i> いいねランキング</a></li>
+          <li><a href='/'><i class="fas fa-share-alt"></i> 最新の作品</a></li>
           <li class="divider"></li>
           <li><a href='/good_ranking'><i class="fas fa-crown"></i> いいねランキング</a></li>
           <li class="divider"></li>
           <li><a href='/users'><i class="fas fa-users"></i> ユーザー</a></li>
           <%# <li class="divider"></li> %>
-          <%# <li><a href='/about_Next innovation'>Next innovationについて</a></li> %>
+          <%# <li><a href='/about_sharemade'>Sharemadeについて</a></li> %>
         </ul>
       </span>
 
-    <% if user_signed_in? %>
-
-      <span class="dropdown pull-right navicon">
-        <button class=" btn dropdown-toggle background nav-user" type="button" data-toggle="dropdown">
-          <span class="naviconfont"><i class="fas fa-user-circle"></i> <i class="fas fa-caret-down"></i></span>
-        </button>
-        <ul class="dropdown-menu" role="user">
-          <li>
-            <%= link_to user_path(current_user) do %>
-              <i class="fas fa-user"></i> マイページ</a>
-            <% end %>
-          </li>
-          <li class="divider"></li>
-          <% if current_user.profiles != [] %>
+      <% if user_signed_in? %>
+        <span class="dropdown pull-right navicon">
+          <button class=" btn dropdown-toggle background nav-user" type="button" data-toggle="dropdown">
+            <span class="naviconfont"><i class="fas fa-user-circle"></i> <i class="fas fa-caret-down"></i></span>
+          </button>
+          <ul class="dropdown-menu" role="user">
             <li>
-              <%= link_to edit_profile_path(current_user), data: {"turbolinks" => false} do %>
-                <i class="fas fa-user-edit"></i>プロフィール
+              <%= link_to user_path(current_user) do %>
+                <i class="fas fa-user"></i> マイページ</a>
               <% end %>
             </li>
-          <% else %>
-            <li><a href="/profiles/new" data-turbolinks="false"><i class="fas fa-user-edit"></i>プロフィール</a></li>
-          <% end %>
-          <li><a href="/users/edit"><i class="fas fa-cog"></i> アカウント設定</a></li>
+            <li class="divider"></li>
+            <% if current_user.profiles != [] %>
+              <li>
+                <%= link_to edit_profile_path(current_user), data: {"turbolinks" => false} do %>
+                  <i class="fas fa-user-edit"></i>プロフィール
+                <% end %>
+              </li>
+            <% else %>
+              <li><a href="/profiles/new" data-turbolinks="false"><i class="fas fa-user-edit"></i>プロフィール</a></li>
+            <% end %>
+            <li><a href="/users/edit"><i class="fas fa-cog"></i> アカウント設定</a></li>
 
-          <li class="divider"></li>
-          <li>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %>
-          </li>
-        </ul>
-      </span>
-
-      <a href="/notifications"><span class="badge pull-right margin-top10 nav-count"><i class="far fa-bell"></i> <%= uncheck_notifications %></span></a>
-
-
-      <%= link_to new_result_path, class:'white', data: {"turbolinks" => false} do %>
-        <span class="btn pull-right result-new margin-top10 margin-right5">
-          <i class="fas fa-edit"></i> 作品登録
+            <li class="divider"></li>
+            <li>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %>
+            </li>
+          </ul>
         </span>
-      <% end %>
 
+        <a href="/notifications"><span class="badge pull-right margin-top10 nav-count"><i class="far fa-bell"></i> <%= uncheck_notifications %></span></a>
 
-      
-    <% else %>
-      <%= link_to new_user_session_path, class: 'white' do %>
-        <span class="btn pull-right navfont">
-          <span>ログイン</span>
-        </span>
+        <%= link_to new_result_path, class:'white', data: {"turbolinks" => false} do %>
+          <span class="btn pull-right result-new margin-top10 margin-right5">
+            <i class="fas fa-edit"></i> 作品登録
+          </span>
+        <% end %>
+        
+      <% else %>
+        <%= link_to new_user_session_path, class: 'white' do %>
+          <span class="btn pull-right navfont">
+            <span>ログイン</span>
+          </span>
+        <% end %>
+        
+        <%= link_to new_user_registration_path, class: 'white' do %>
+          <span class="btn pull-right navfont signup">
+            アカウント登録
+          </span>
+        <% end %>
       <% end %>
-      
-      <%= link_to new_user_registration_path, class: 'white' do %>
-        <span class="btn pull-right navfont signup">
-          アカウント登録
-        </span>
-      <% end %>
-    <% end %>
-  </div>
-
+    </div>
 </header>
