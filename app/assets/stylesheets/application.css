@@ -80,24 +80,23 @@ footer {
   color: #f79b24;
 }
 
-
-/* ヘッダー、トップ */
-
-
 header {
   height: 50px;
   background: red;
   color: #778899;
 }
 
+/* ヘッダー、トップ */
+
 .navlogo {
   font-size: 20px;
   float: left;
   height: 50px;
-  padding: 10px 0 10px 5%;
+  padding: 10px 0;
   text-decoration: none;
-  color: #778899;
+  color: #fff;
 }
+
 
 .navlogo:hover {
   text-decoration: none;
@@ -109,7 +108,7 @@ header {
   padding-left: 6px;
   color: #272e2e;
   font-size: 23px;
-  background: #FF69A3;
+  background: red;
 }
 
 .navicon {
@@ -240,11 +239,11 @@ header {
 }
 
 .nav-pills > li.active > a {
-  background: #111111;
+  background:#FFABCE;
 }
 
 .nav-pills > li.active > a:hover {
-  background: #11b5bb;
+  background:#E9FFA5;
 }
 
 .partition {
