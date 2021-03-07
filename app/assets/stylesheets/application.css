@@ -36,11 +36,11 @@
 
 
 .color {
-  color: #08d1d8;
+  color: red;
 }
 
 .background {
-  background: #08d1d8;
+  background: red;
 }
 
 .new-look-bg {
@@ -53,14 +53,15 @@
 }
 
 .green {
-  color: #52b311;
+  color: red;
 }
 
 
 
 body {
   word-wrap: break-word;
-  background: #75695e1a;
+  background: white;
+  /* background-image: linear-gradient(0deg, #ffffff 2%, #69f1f7 18%, #2bcdd3 50%); */
 }
 
 .alert {
@@ -133,7 +134,7 @@ header {
 
 .result-new {
   font-size: 13px;
-  background: #27a9ad;
+  background: red;
 }
 
 .nav-count {
@@ -164,25 +165,50 @@ header {
 /* レッツゴー */
 .welcome {
   padding: 50px 40px 30px 40px;
-  color: #778899;
+  color: black;
   background-color: #ffffff;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /* background-image: linear-gradient(0deg, #ffffff 2%, #69f1f7 18%, #2bcdd3 50%); */
+  background-color: #e74c3c;
+  animation: bg-color 10s infinite;
+  -webkit-animation: bg-color 10s infinite;
 }
+@-webkit-keyframes bg-color {
+  0% { background-color: #e7c0bb; }
+  20% { background-color: #e9d68b; }
+  40% { background-color: #a3e4d7fd; }
+  60% { background-color: #a8cee7; }
+  80% { background-color: #be95ce; }
+  100% { background-color: #f58073; }
+}
+@keyframes bg-color {
+  0% { background-color: #e74c3c; }
+  20% { background-color: #f1c40f; }
+  40% { background-color: #1abc9c; }
+  60% { background-color: #3498db; }
+  80% { background-color: #9b59b6; }
+  100% { background-color: #e74c3c; }
+}
+
+
+
 
 .welcometitle {
   font-weight: 700;
   margin-bottom: 0;
+  font-size: 80px;
 }
 
 .welcomecontent {
-  background: #424242da;
+  background: #FFFFFF;
   padding: 4px;
   border-radius: 15px;
   width: 300px;
   margin: 35px auto auto auto ;
+  background-color: #e74c3c;
+  animation: bg-color 10s infinite;
+  -webkit-animation: bg-color 10s infinite;
 }
 
 
@@ -192,37 +218,37 @@ header {
   border-bottom: 2px solid #000000;
   border: 2px solid #000000;
   margin: 20px 15px;
-  background: #10bac0;
+  background: #FFFFFF;
 }
 
 .welcomebtn:hover {
   color: #000000;
-  background:#D8BFD8;
+  background:red;
 }
 .nomalbtn {
-  color: #2bcdd3;
-  border: 2px solid #2bcdd3;
+  color: red;
+  border: 2px solid red;
   background-color: transparent;
   padding: 6px 30px;
 }
 
 .nomalbtn:hover,
 .nomalbtn.now {
-  color: #fff;
-  background: #2bcdd3;
-  border-color: #18868a;
+  color: black;
+  background: red;
+  border-color: white;
 }
 
 .goodbtn {
-  color: #f79b24;
-  border: 2px solid #f79b24;
+  color: red;
+  border: 2px solid red;
   padding: 6px 30px;
 }
 
 .goodbtn:hover,
 .goodbtn.now {
   color: #fff;
-  background: #f79b24;
+  background: red;
 }
 
 .badge {
@@ -235,15 +261,16 @@ header {
 
 /* メニューリスト */
 .nav-pills > li > a {
-  color: #707272;
+  color: black;
 }
 
 .nav-pills > li.active > a {
-  background:#FFABCE;
+  color: #000000;
+  background: white;
 }
 
 .nav-pills > li.active > a:hover {
-  background:#E9FFA5;
+  background: red;
 }
 
 .partition {
@@ -346,15 +373,15 @@ header {
 }
 
 .b-bottom {
-  border-bottom: 3px solid #2bcdd3;
+  border-bottom: 3px solid red;
 }
 
 .good-b-bottom {
-  border-bottom: 3px solid #f79b24;
+  border-bottom: 3px solid red;
 }
 
 .users-b-bottom {
-  border-bottom: 3px solid #52b311;
+  border-bottom: 3px solid red;
 }
 
 .result .col-sm-4 {
@@ -394,12 +421,12 @@ header {
 }
 
 .tweetbtn {
-  background: #1b95e0;
+  background: red;
   color: #fff;
 }
 
 .tweetbtn:hover {
-  background: #1688cf;
+  background: red;
   color: #fff;
 }
 
@@ -411,4 +438,9 @@ header {
   border-radius: 15px;
   border: 5px solid rgba(96, 124, 126, 0.658);
   z-index: 1;
+}
+
+.btn {
+  background-color: red;
+  color: white;
 }
