@@ -2,9 +2,9 @@
   <div class="container">
     <a href="/" class='navlogo'>Next innovation</a>
     <span class="dropdown">
-      <button class="btn navpull dropdown-toggle" type="button" data-toggle="dropdown">
-        <i class="far fa-caret-square-down"></i>
-      </button>
+      <%# <button class="btn navpull dropdown-toggle" type="button" data-toggle="dropdown"> %>
+        <%# <i class="far fa-caret-square-down"></i> %>
+      <%# </button> %>
       <ul class="dropdown-menu" role="menu">
         <li><a href='/'><i class="fas fa-share-square"></i> 最新の作品</a></li>
         <li class="divider"></li>
@@ -16,9 +16,9 @@
 
     <% if user_signed_in? %>
       <span class="dropdown pull-right navicon">
-        <button class=" btn dropdown-toggle background nav-user" type="button" data-toggle="dropdown">
+        <%# <button class=" btn dropdown-toggle background nav-user" type="button" data-toggle="dropdown">
           <span class="naviconfont"><i class="fas fa-user-circle"></i> <i class="fas fa-caret-down"></i></span>
-        </button>
+        </button> %>
         <ul class="dropdown-menu" role="user">
           <li>
             <%= link_to user_path(current_user) do %>
