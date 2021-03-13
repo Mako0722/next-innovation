@@ -83,7 +83,7 @@ footer {
 
 header {
   height: 50px;
-  background: red;
+  background: rgb(87, 1, 1);
   color: #778899;
 }
 
@@ -151,7 +151,7 @@ header {
 
 
 .signup {
-  border: 2px solid #fff;
+  /* border: 2px solid #fff; */
 }
 
 .signup:hover {
@@ -165,7 +165,7 @@ header {
 /* レッツゴー */
 .welcome {
   padding: 50px 40px 30px 40px;
-  color: black;
+  color: #f7ecec;
   background-color: #ffffff;
   background-size: cover;
   background-repeat: no-repeat;
@@ -175,21 +175,21 @@ header {
   -webkit-animation: bg-color 10s infinite;
 }
 @-webkit-keyframes bg-color {
-  0% { background-color: #e7c0bb; }
-  20% { background-color: #e9d68b; }
-  40% { background-color: #a3e4d7fd; }
-  60% { background-color: #a8cee7; }
-  80% { background-color: #be95ce; }
-  100% { background-color: #f58073; }
+  0% { background-color:rgb(70, 71, 72); }
+  20% { background-color: rgb(29,36,39); }
+  40% { background-color: rgb(95, 94, 94); }
+  60% { background-color: rgb(9, 64, 77); }
+  80% { background-color: rgb(48, 59, 84); }
+  100% { background-color:rgb(55, 54, 54);}
 }
-@keyframes bg-color {
+/* @keyframes bg-color {
   0% { background-color: #e74c3c; }
   20% { background-color: #f1c40f; }
   40% { background-color: #1abc9c; }
   60% { background-color: #3498db; }
   80% { background-color: #9b59b6; }
   100% { background-color: #e74c3c; }
-}
+} */
 
 
 
@@ -215,8 +215,8 @@ header {
 
 .welcomebtn {
   color:#000000;
-  border-bottom: 2px solid #000000;
-  border: 2px solid #000000;
+  /* border-bottom: 2px solid #000000; */
+  /* border: 2px solid #000000; */
   margin: 20px 15px;
   background: #FFFFFF;
 }
@@ -227,14 +227,14 @@ header {
 }
 .nomalbtn {
   color: red;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   background-color: transparent;
   padding: 6px 30px;
 }
 
 .nomalbtn:hover,
 .nomalbtn.now {
-  color: black;
+  color: rgb(226, 221, 221);
   background: red;
   border-color: white;
 }
@@ -421,7 +421,7 @@ header {
 }
 
 .tweetbtn {
-  background: red;
+  background-color: rgb(30,161,242);
   color: #fff;
 }
 
@@ -440,7 +440,13 @@ header {
   z-index: 1;
 }
 
-.btn {
-  background-color: red;
+/* .btn {
+  background-color: rgb(82, 3, 3);
   color: white;
+} */
+
+.btn-info {
+  color: #fff;
+  background-color: #142f37;
+  border-color: #142f37;
 }
